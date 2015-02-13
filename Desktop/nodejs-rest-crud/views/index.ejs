@@ -1,0 +1,194 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="bower_components/css/starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">AVON</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Transactions<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Purchase Order</a></li>
+                <li><a href="#">Payment</a></li>
+                
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Order<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/P-order">Add </a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">View</a></li>
+                
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Customer<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/C-registration">Manage</a></li>
+               
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Product<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/P-registration">Add </a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">View</a></li>
+                
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/user">User </a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">View</a></li>
+                
+              </ul>
+            </li>
+          </ul>
+          <!--  <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form> -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a data-toggle="modal" href="#myModal1" class="dropdown-toggle" data-toggle="dropdown">Login|Sign-up <span class=""></span></a>
+
+            </li>
+          </ul>
+          </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container ">
+          <div class="starter-template">
+            <h1>WELCOME</h1>
+            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+          </div>
+          </div><!-- /.container -->
+
+       <div id="myModal1" class="modal fade in bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md"  >
+                <div class="modal-content" >
+
+                    <div class="modal-header custom-back-color">
+                <div class="form-group">
+                    <a class="btn btn-default pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove" style="
+                        color: #DD4B39;
+                    "></span></a>
+                </div>
+                <h4 class="modal-title" id="myModalLabel"><strong>Login or Sign UP</strong> </h4>
+            </div>
+                    <div class="modal-body">
+                        <div class="row" >
+
+                                <div class=" with-nav-tabs panel-default">
+
+
+                                    <div class="col-xs-14" >
+                                        <div class="well" style="background: #FFFFFF;boders;border: aqua;">
+                                            <div class="form-group">
+                                                <div class="section-image " >
+                                                    <img src="bower_components/img/avon.png" class="img-responsive center-block">
+                                                </div>
+                                            </div>
+
+                                            <form role="form" name="loginForm" action="/loginpage" method="post" class="m-top-md" id="logins" onsubmit="md5(passwordr1, md5pass, md5pass_utf);" data-parsley-validate novalidate>
+                                                <input type="hidden" name="url" id="url" value="">
+                                                <div class="form-group">
+                                                    <label for="username" class="control-label">Email<font style="opacity: .5"> (or username)</font></label>
+                                                    <input class="form-control custom-input" type="email" name="usernamer1" data-parsley-group="block1" data-parsley-required-message="The email address you entered has invalid" required value="" size="40" id="usernamer1" title="Enter Your Email Address"
+                                                    data-container="body" data-toggle="tooltip" data-placement="top"
+                                                    data-content="example@example.com">
+                                                    <span class="help-block"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password" class="control-label" >Password</label>
+                                                    <input type="password" class="form-control custom-input" name="passwordr1" id="passwordr1" size="40" onclick="password_chk()" onblur="password_blur(this)" onkeyup="password_rem()" data-parsley-group="block1" data-parsley-required-message="The password you entered has invalid"   required />
+                                                    <input type="hidden" name="redirect" value="" />
+                                                    <input type="hidden" name="login_process" value="1" />
+                                                    <input type="hidden" name="md5pass" />
+                                                    <input type="hidden" name="md5pass_utf" />
+                                                    <span class="help-block"></span>
+                                                </div>
+                                                <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+
+                                                <div class="m-top-40 text-center">
+                                                    <button type="submit" class="btn btn-lg custom-back-color btn-wide" style="width: 163px;">Login</i>
+                                                    </button>
+                                                    <div class="font-13 m-top-20">forgot <a href="/recovery">password</a>?</div>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                                        <!-- ./col -->
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                </div><!-- /.modal-content -->
+                </div><!-- /.modal-dalog -->
+                </div><!-- /.modal -->
+
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    </body>
+</html>

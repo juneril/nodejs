@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%=title%></title>
+         <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <link href="bower_components/DataTables-1.10.4/media/css/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="bower_components/css/starter-template.css" rel="stylesheet">
+    </head>
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">AVON</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Transactions<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Purchase Order</a></li>
+                <li><a href="#">Payment</a></li>
+                
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Order<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/P-order">Add </a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">View</a></li>
+                
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Customer<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/customer">Manage</a></li>
+               
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Product<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/P-registration">Add </a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">View</a></li>
+                
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/user">User </a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">View</a></li>
+                
+              </ul>
+            </li>
+          </ul>
+          <!--  <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form> -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Username <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Account Info</a></li>
+                <li><a href="#">Edit Profile</a></li>
+                
+                <li class="divider"></li>
+                <li><a href="/">Log-Out</a></li>
+              </ul>
+            </li>
+          </ul>
+          </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+         <div class="container padding-customtap">
+          <div class="row ">
+           <div class="col-md-3">
+           <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">User <small>Information</small></h3>
+                </div>
+ <div class="panel-body">
+        <div class="page-data">
+    
+    <form role="form" method="post" action="" id="the-form">
+     <div class="col-sm-9 col-md-7">
+                            <div class="clearfix">
+                                <a href="#" class="thumbnail inline-block pull-left m-right-md" style="margin-bottom:0;">
+
+
+                                    <img src="bower_components/img/photo.jpg" alt="..." class="img-rounded" style="max-width: 143px; max-height: 143px;">
+
+                                </a>
+                                <div class="m-top-20"> <a class="btn btn-primary m-left-sm" id="upload-profile-photo">Upload</a>
+
+                            </div>
+                              <div class="m-left-20 m-top-5 editlogo ">
+                            <a href="javascript:void(0)"  class ="dropdown-toggle btn btn-danger" onclick="delete_logo()">Remove</a>
+                        </div>
+                        </div>
+
+                    </div>
+       
+         <div class="form-group">
+           <input type="text" class="form-control input-md" name="name" placeholder="Full Name">
+         </div> 
+       <div class="form-group">
+           <input type="text" class="form-control input-md"name="email" placeholder="Email Address">
+         </div> 
+         <div class="form-group">
+          <input type="password" class="form-control input-md"name="password" PlaceHolder="Password">
+         </div> 
+          <div class="form-grou class="form-control input-md"">
+          
+          <input type="button" value="Save" onClick="saveUser()">
+           
+         </div> 
+       
+    </form>
+    <div class="page-data" style="color: red;">
+     <ul class="err-area"></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+         <div class="col-md-9">
+                 <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Users LIST</h3>
+                  
+                </div>
+                
+                <div class="panel-body">
+            <div class="table-responsive">
+            <table class="table table-hover " id="dev-table">
+            <thead>
+        <tr>
+            <th width="50px">No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+         <tbody>
+                       
+        <% if(data.length){ 
+                        
+         for(var i = 0;i < data.length;i++) { %>
+         
+        <tr>
+            <td><%=(i+1)%></td>
+            <td><%=data[i].name%></td>
+            <td><%=data[i].email%></td>
+            <td><%=data[i].password%></td>
+
+
+            <td class="text-center">
+
+                <a class="a-inside edit btn btn-info btn-xs " href="/user/<%=data[i].user_id%>"> <span class="glyphicon glyphicon-edit"></span>Edit</a>
+               
+                <a class="a-inside delete btn btn-danger btn-xs" href="javascript:void(0)" onClick="deleteUser(<%=data[i].user_id%>)"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+               
+            </td>
+        </tr>
+    <% }
+    
+     }else{ %>
+         <tr>
+            <td colspan="5">No Data</td>
+         </tr>
+    <% } %>
+               </tbody>                        
+    </table>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+
+       <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+          <script src="bower_components/DataTables-1.10.4/media/js/jquery-1.11.1.min.js"></script>
+          <script src="bower_components/DataTables-1.10.4/media/js/jquery.dataTables.min.js"></script>
+          <script src="bower_components/DataTables-1.10.4/media/js/dataTables.bootstrap.js"></script>
+          <script>
+          $(document).ready(function(){
+          $(".dropdown").hover(
+          function() {
+          $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+          $(this).toggleClass('open');
+          },
+          function() {
+          $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+          $(this).toggleClass('open');
+          }
+          );
+          });
+          </script>
+          <script>
+          $(document).ready(function() {
+          $('#dev-table').dataTable();
+          } );
+       
+          </script>
+<script>
+
+    function saveUser(){
+       
+       $.ajax({
+        
+        url:"/user",
+        type:"post",
+        data:$("#the-form").serialize(),
+        success:function(res){
+            
+            window.location.reload();
+            return false;
+        },
+        error:function(xhr, status, error){
+            
+            console.log(xhr.responseText);
+            var err = '';
+            $.each(JSON.parse(xhr.responseText) , function(i, item) {
+               
+                 err +='<li>'+item.msg+'</li>';
+            });
+            $(".err-area").html(err);    
+            return false;
+        }
+        
+       });
+    }
+    
+    function deleteUser(user_id){
+    
+        $.ajax({
+            url:"/user/"+user_id,
+            type: 'DELETE',
+            success: function(res) {
+                
+                window.location.reload();
+                return false;
+            },
+            error:function(xhr, status, error){
+            
+                console.log(xhr.responseText);
+                alert("Error deleting");
+                return false;
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
